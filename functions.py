@@ -50,3 +50,45 @@ def greet(**kwargs):
         print(f"{key}:{value}")
 
 greet(name="sapna",age=27,city="delhi")        
+
+
+# Function within Functions - A function can be defined inside another function. The inner function can access the variables of the outer function.
+def greet():
+    name = "sapna"
+    def message():
+        print("hello",name)
+    message()
+greet()        
+
+# Return Statement - used to return a value from a function. It can be used to return any type of value, including numbers, strings, lists, etc.
+def add(a, b):
+    return a + b
+result = add(5, 10)
+print(result)
+
+# Pass by Reference and Pass by Value 
+# a. pass by value -A copy of the value is sent to the function. Changes inside the function do not affect the original variable.
+x = 10
+def fun(x):
+    x = x+ 5;
+    print("inside fun:", x)
+fun(x)    
+
+name = "Rahul"
+
+def change_name(text):
+    text = "Amit"
+    print("Inside function:", text)
+
+change_name(name)
+
+print("Outside function:", name)
+
+# b. pass by reference - A reference to the original variable is sent to the function. Changes inside the function affect the original variable.
+
+number = [1, 2, 3]
+def func(num):
+    num.append(4)
+
+func(number)
+print(number)
